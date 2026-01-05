@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HBD Sayang!</title>
+    <style>
+        body {
+            background: linear-gradient(135deg, #001f3f 0%, #000814 100%);
+            font-family: 'Segoe UI', Tahoma, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            color: white;
+            overflow-y: auto; 
+        }
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            width: 100%;
+            max-width: 320px;
+            padding: 30px;
+            border-radius: 25px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
+        img {
+            width: 100%;
+            height: auto;
+            border-radius: 15px;
+            object-fit: cover;
+            border: 3px solid #0074D9;
+            margin-bottom: 20px;
+        }
+        h1 { font-size: 22px; color: #7FDBFF; margin: 10px 0; }
+        .pesan {
+            font-size: 15px;
+            line-height: 1.8;
+            margin-bottom: 20px;
+            color: #dddddd;
+        }
+        .btn {
+            background: #0074D9;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 30px;
+            border: none;
+            font-weight: bold;
+            cursor: pointer;
+            width: 100%;
+        }
+        .heart {
+            position: fixed;
+            top: -10px;
+            color: #7FDBFF;
+            font-size: 20px;
+            z-index: 1;
+            animation: fall linear forwards;
+        }
+        @keyframes fall {
+            to { transform: translateY(105vh); }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <img src="https://i.ibb.co.com/NdRJH1GM/Whats-App-Image-2026-01-05-at-19-52-52.jpg" alt="Foto Sayang">
+        
+        <h1>Happy Birthday, Sayang! 🎂</h1>
+        
+        <div class="pesan">
+            "Happy Birhday ayngg yg selalu meolah aku merasa beruntung. Makasih sayang sdh sayang lwn aku, selalu ada gsn aku. <br><br>
+            Sayang aku kd perlu hadiah-hadiah ciuss, krna lwn ayng ja sudah cukup. Semoga bahagia terus lwn aku ya!"
+        </div>
+        
+        <button class="btn" onclick="tampilPesan()">Klik Sebentar ❤️</button>
+    </div>
+
+    <script>
+        function tampilPesan() {
+            alert("I love you more than words can say. Bahagia selalu sayang! ❤️✨");
+        }
+
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.innerHTML = '💙';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = Math.random() * 3 + 2 + 's';
+            heart.style.opacity = Math.random();
+            document.body.appendChild(heart);
+            setTimeout(() => { heart.remove(); }, 5000);
+        }
+        setInterval(createHeart, 300);
+    </script>
+
+</body>
+</html>
